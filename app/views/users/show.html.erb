@@ -31,17 +31,20 @@
             <% if book.favorited_by?(current_user) %>
                   <td>
                     <%= link_to book_favorites_path(book), method: :delete do%>
-                       <i class="fas fa-heart like-btn "></i><%=book.favorites.count%><%=book.favorites.count%>
+                       <i class="fas fa-heart like-btn "></i><%=book.favorites.count%>
                     <%end%>
                   </td>
-                <%else%>
+            <%else%>
                 <td>
                   <%= link_to book_favorites_path(book), method: :post do%>
 
-                     <i class="fas fa-heart unlike-btn "></i><%=book.favorites.count%><%=book.favorites.count%>
+                     <i class="fas fa-heart unlike-btn "></i><%=book.favorites.count%>
                   <%end%>
                 </td>
-                <%end%>
+            <%end%>
+            <td>
+              <p>コメント件数:<%= book.book_comments.count %></p>
+            </td>
 
           </tr>
           <% end %>
