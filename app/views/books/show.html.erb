@@ -18,6 +18,21 @@
                 <td><%= link_to "Edit", edit_book_path(@book.id), method: :get %></td>
                  <td><%= link_to "Destroy", book_path(@book), method: :delete %></td>
               <% end %>
+
+                <% if @book.favorited_by?(current_user) %>
+                  <td>
+                    <%= link_to book_favorites_path(@book), method: :delete do%>
+                      ♡<%=@book.favorites.count%>いいね
+                    <%end%>
+                  </td>
+                <%else%>
+                <td>
+                  <%= link_to book_favorites_path(@book), method: :post do%>
+                    ♡<%=@book.favorites.count%>いいね
+                  <%end%>
+                </td>
+                <%end%>
+
            </tr>
          </tbody>
        </table>
