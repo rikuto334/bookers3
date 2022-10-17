@@ -1,1 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
+
+.like-btn {
+ width: 25px;
+ height: 30px;
+ font-size: 25px;
+ color: red;
+ margin-left: 20px;
+ }
+
+.unlike-btn {
+ width: 25px;
+ height: 30px;
+ font-size: 25px;
+ color: blue;
+ margin-left: 20px;
+ }
